@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sébastien Portrait — CV</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
+
+            :root {
+                --paper: #f8f9f6;
+                --panel: #eef0ea;
+                --ink: #2c2f2b;
+                --ink-soft: #51564e;
+                --muted: #8a8f85;
+                --line: #d8dace;
+                --accent: #4a7c59;
+                --accent-soft: #e6ede8;
+                --accent-deep: #2e5439;
+                --mono: "IBM Plex Mono", ui-monospace, monospace;
+                --sans: "IBM Plex Sans", system-ui, sans-serif;
+            }
+
+            * { box-sizing: border-box; }
+            html, body { margin: 0; padding: 0; background: #cfd1c8; }
+            body {
+                font-family: var(--sans);
+                color: var(--ink);
+                display: flex;
+                justify-content: center;
+                padding: 30px 12px;
+            }
+
+            .page {
+                width: 210mm;
+                min-height: 297mm;
+                background: var(--paper);
+                box-shadow: 0 6px 40px rgba(0, 0, 0, 0.12);
+                display: grid;
+                grid-template-columns: 62mm 1fr;
+                overflow: hidden;
+            }
+
+            .sidebar {
+                background: var(--panel);
+                padding: 9mm 7mm 10mm 10mm;
+                border-right: 1px solid var(--line);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .photo {
+                width: 26mm;
+                height: 26mm;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center 42%;
+                display: block;
+                margin: 0 auto 11px;
+                outline: 1px solid var(--line);
+                outline-offset: 3px;
+            }
+
+            .name {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 1.15;
+                margin: 0 0 13px;
+                color: var(--ink);
+                letter-spacing: -0.02em;
+            }
+
+            .contact {
+                font-size: 10.5px;
+                line-height: 1.7;
+                color: var(--ink-soft);
+                margin-bottom: 18px;
+                word-break: break-word;
+            }
+            .contact a {
+                color: var(--accent-deep);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+            .contact a:hover { color: var(--accent); text-decoration: underline; }
+            .contact .k {
+                font-family: var(--mono);
+                color: var(--muted);
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                display: block;
+            }
+
+            .side-h {
+                font-family: var(--mono);
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--accent-deep);
+                margin: 0 0 10px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid var(--line);
+                font-weight: 600;
+            }
+
+            .side-block { margin-bottom: 17px; }
+
+            .skill-cat { margin-bottom: 10px; }
+            .skill-cat-title {
+                font-size: 10px;
+                font-weight: 600;
+                color: var(--ink);
+                margin: 0 0 4px;
+                display: block;
+            }
+            .skill-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0;
+            }
+            .skill-list li {
+                font-family: var(--mono);
+                font-size: 9.5px;
+                color: var(--ink-soft);
+                margin-right: 2px;
+            }
+            .skill-list li:not(:last-child)::after {
+                content: "·";
+                margin-left: 4px;
+                color: var(--line);
+                font-weight: bold;
+            }
+
+            .lang-item {
+                font-size: 11px;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .lang-lvl {
+                font-family: var(--mono);
+                font-size: 9px;
+                color: var(--muted);
+                text-align: right;
+            }
+
+            .edu-item {
+                font-size: 10.5px;
+                line-height: 1.5;
+                margin-bottom: 8px;
+                color: var(--ink-soft);
+            }
+            .edu-item .t { color: var(--ink); font-weight: 600; display: block; font-size: 11px; }
+            .misc { font-size: 10px; color: var(--ink-soft); line-height: 1.7; }
+
+            .main {
+                padding: 7mm 9mm 6mm 8mm;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .masthead {
+                margin-bottom: 11px;
+                padding-bottom: 9px;
+                border-bottom: 2px solid var(--ink);
+            }
+            .big-title {
+                font-family: var(--sans);
+                font-size: 23px;
+                font-weight: 700;
+                letter-spacing: -0.03em;
+                margin: 0 0 8px;
+                color: var(--ink);
+                line-height: 1;
+            }
+            .tech-stack {
+                font-family: var(--mono);
+                font-size: 10px;
+                color: var(--accent-deep);
+                margin: 0;
+                letter-spacing: 0.02em;
+                font-weight: 500;
+            }
+
+            .profil {
+                font-size: 10.5px;
+                line-height: 1.55;
+                color: var(--ink-soft);
+                padding-bottom: 8px;
+                margin-bottom: 8px;
+                border-bottom: 1px solid var(--line);
+            }
+            .profil strong { color: var(--ink); font-weight: 600; }
+
+            .sec-title {
+                font-family: var(--mono);
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                color: var(--accent-deep);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0 0 10px;
+                font-weight: 600;
+            }
+            .sec-title::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: var(--line);
+            }
+
+            section { margin-bottom: 12px; }
+            section:last-child { margin-bottom: 0; }
+
+            .company-super {
+                margin-bottom: 4px;
+                display: flex;
+                align-items: baseline;
+                gap: 8px;
+            }
+            .super-name {
+                font-family: var(--mono);
+                font-size: 11px;
+                font-weight: 600;
+                color: var(--ink);
+                letter-spacing: 0.02em;
+            }
+            .super-range {
+                font-family: var(--mono);
+                font-size: 9.5px;
+                color: var(--muted);
+            }
+
+            .job {
+                display: grid;
+                grid-template-columns: 18mm 1fr;
+                gap: 3mm;
+                margin-bottom: 8px;
+            }
+            .job-date {
+                font-family: var(--mono);
+                font-size: 9px;
+                color: var(--muted);
+                padding-top: 2px;
+                line-height: 1.5;
+            }
+            .job-title {
+                font-size: 11px;
+                font-weight: 700;
+                margin: 0 0 3px;
+            }
+            .job ul {
+                margin: 0 0 4px;
+                padding-left: 13px;
+                font-size: 9.5px;
+                line-height: 1.5;
+                color: var(--ink-soft);
+            }
+            .job ul li { margin-bottom: 1px; }
+
+            .results {
+                background: var(--accent-soft);
+                border-left: 2px solid var(--accent);
+                padding: 5px 8px;
+                font-size: 9px;
+                line-height: 1.45;
+                color: var(--accent-deep);
+                margin-top: 5px;
+            }
+            .results .r-label {
+                font-family: var(--mono);
+                font-size: 8.5px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                display: block;
+                margin-bottom: 3px;
+                opacity: 0.7;
+                font-weight: 600;
+            }
+
+            .changelog {
+                background: var(--accent-soft);
+                color: var(--accent-deep);
+                border-left: 2px solid var(--accent);
+                padding: 12px 14px;
+                font-family: var(--mono);
+                font-size: 9.5px;
+                line-height: 1.7;
+            }
+            .cl-group {
+                color: var(--muted);
+                font-size: 8.5px;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin: 0 0 4px;
+                font-weight: 600;
+            }
+            .cl-group.second { margin-top: 10px; }
+            .cl-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 1px; }
+            .cl-line.wrap {
+                white-space: normal;
+                overflow: visible;
+                padding-left: 62px;
+                text-indent: -62px;
+            }
+            .cl-tag {
+                color: var(--accent);
+                font-weight: 600;
+                display: inline-block;
+                width: 62px;
+            }
+            .cl-repo { color: var(--ink); font-weight: 600; }
+            .cl-desc { color: var(--ink-soft); }
+            .cl-meta { color: var(--muted); }
+
+            .proj-list {
+                font-size: 10.5px;
+                line-height: 1.6;
+                color: var(--ink-soft);
+                padding-left: 14px;
+                margin: 0;
+            }
+            .proj-list li { margin-bottom: 5px; }
+            .proj-list b { color: var(--ink); font-weight: 600; }
+
+            .two-col {
+                display: grid;
+                grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+                gap: 20px;
+                align-items: start;
+            }
+            .two-col section { margin-bottom: 0; min-width: 0; }
+            /* En demi-largeur le changelog ne peut plus rester sur une seule ligne */
+            .two-col .changelog {
+                padding: 11px 13px;
+                font-size: 9px;
+                line-height: 1.65;
+                overflow-wrap: break-word;
+            }
+            .two-col .cl-line,
+            .two-col .cl-line.wrap {
+                white-space: normal;
+                overflow: visible;
+                text-overflow: clip;
+                padding-left: 10px;
+                text-indent: -10px;
+                margin-bottom: 3px;
+            }
+            .two-col .cl-tag { width: auto; margin-right: 3px; }
+            .two-col .proj-list { font-size: 9.5px; line-height: 1.5; padding-left: 12px; }
+            .two-col .proj-list li { margin-bottom: 3px; }
+
+            .print-btn {
+                position: fixed;
+                top: 18px;
+                right: 18px;
+                font-family: var(--mono);
+                font-size: 11px;
+                background: var(--accent-deep);
+                color: #fff;
+                border: none;
+                padding: 8px 14px;
+                border-radius: 4px;
+                cursor: pointer;
+                letter-spacing: 0.03em;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                transition: background 0.2s;
+            }
+                        .nav-btn {
+                text-decoration: none;
+                display: inline-block;
+                background: var(--panel);
+                color: var(--accent-deep);
+                border: 1px solid var(--line);
+            }
+            .nav-btn:hover { background: var(--accent-soft); color: var(--accent-deep); }
+            .nav-lang { right: 112px; }
+            .nav-home { right: 158px; }
+            .print-btn:hover { background: var(--accent); }
+
+            @media print {
+                .print-btn { display: none; }
+                body { padding: 0; background: #fff; }
+                .page { box-shadow: none; width: auto; min-height: 296mm; }
+                @page { size: A4; margin: 0; }
+                .page { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            }
+        </style>
+    </head>
+    <body>
+        <button class="print-btn" onclick="window.print()">Imprimer / PDF</button>
+
+        <a class="print-btn nav-btn nav-lang" href="en.html">EN</a>
+        <a class="print-btn nav-btn nav-home" href="index.html">←</a>
+        <div class="page">
+            <aside class="sidebar">
+                <img class="photo" src="pic.png" alt="Portrait de Sébastien Portrait" />
+                <p class="name">Sébastien Portrait</p>
+
+                <div class="contact">
+                    <span class="k">Localisation</span>Nouvelle-Aquitaine, France
+                    <br /><span class="k">Email</span><a href="mailto:nseaprotector@gmail.com">nseaprotector@gmail.com</a>
+                    <br /><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/sebastien-portrait-31a3b0352/" target="_blank">Sébastien Portrait</a>
+                    <br /><span class="k">GitHub</span><a href="https://github.com/nseaSeb" target="_blank">nseaSeb</a>
+                </div>
+
+                <div class="side-block">
+                    <p class="side-h">Compétences</p>
+
+                    <div class="skill-cat">
+                        <span class="skill-cat-title">Backend</span>
+                        <ul class="skill-list">
+                            <li>Elixir</li><li>Phoenix</li><li>Ash Framework</li>
+                            <li>Node.js</li><li>NestJS</li><li>Express</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-cat">
+                        <span class="skill-cat-title">API & Architecture</span>
+                        <ul class="skill-list">
+                            <li>REST</li><li>Webhooks</li><li>OAuth</li>
+                            <li>SaaS</li><li>Multi-tenancy</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-cat">
+                        <span class="skill-cat-title">Data & Bases</span>
+                        <ul class="skill-list">
+                            <li>PostgreSQL</li><li>SQL</li><li>Full-text search</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-cat">
+                        <!-- Reformulation : on vante le bare-metal/conteneurs plutôt qu'un cloud spécifique -->
+                        <span class="skill-cat-title">Infrastructure & CI/CD</span>
+                        <ul class="skill-list">
+                            <li>Linux</li><li>Docker</li><li>Git</li>
+                            <li>Fly.io</li><li>CI/CD</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-cat">
+                        <!-- Tests mis en avant -->
+                        <span class="skill-cat-title">Tests & Outils</span>
+                        <ul class="skill-list">
+                            <li>ExUnit</li>
+                            <li>Claude Code</li><li>Postman</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-cat">
+                        <span class="skill-cat-title">Frontend (Intégration)</span>
+                        <ul class="skill-list">
+                            <li>JavaScript</li><li>Vue.js</li><li>Angular</li>
+                            <li>HTML / CSS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-block">
+                    <p class="side-h">Langues</p>
+                    <div class="lang-item">
+                        <span>🇫🇷 Français</span>
+                        <span class="lang-lvl">Natif</span>
+                    </div>
+                    <div class="lang-item">
+                        <span>🇬🇧 Anglais</span>
+                        <span class="lang-lvl">B2 · TOEIC 795/990</span>
+                    </div>
+                </div>
+
+                <div class="side-block">
+                    <p class="side-h">Formation</p>
+                    <div class="edu-item">
+                        <span class="t">CAP Électrotechnique</span>
+                    </div>
+                    <div class="edu-item">
+                        <span class="t">Dyma Academy — 275h+</span>
+                        JavaScript, Bash, Linux, Node.js, Vue.js, Angular, Rust, Git, Docker, SQL
+                    </div>
+                </div>
+
+                <div class="side-block" style="margin-top: auto;">
+                    <p class="side-h">Divers</p>
+                    <p class="misc">
+                        Permis B, véhicule personnel<br />
+                        Sociétaire SACEM (MAO) · Musique, Formule 1
+                    </p>
+                </div>
+            </aside>
+
+            <main class="main">
+                <header class="masthead">
+                    <h1 class="big-title">DÉVELOPPEUR BACKEND & API</h1>
+                    <p class="tech-stack">Elixir · Phoenix · Node.js · NestJS · PostgreSQL · SaaS · Intégration API Rest</p>
+                </header>
+
+                <p class="profil">
+                    <strong>4 années d'expérience professionnelle</strong> sur des logiciels de gestion SaaS, avec une forte appétence pour l'investigation technique, le debug et la consommation d'API. Autodidacte depuis les années 90 (de l'ASM 68k aux architectures modernes), j'ai une approche pragmatique du développement. Je maîtrise la stack <strong>Elixir/Phoenix & Ash</strong>. Expérience frontend avec <strong>JavaScript</strong>, Vue.js et Angular, et backend avec Node.js, Express et NestJS. J'intègre l'IA générative (Claude Code) dans mon workflow. Contributeur Open Source.
+                </p>
+                <br />
+                <section>
+                    <p class="sec-title">Expérience professionnelle</p>
+
+                    <div class="company-super">
+                        <span class="super-name">SELLSY</span>
+                        <span class="super-range">2022 — 2026</span>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">2023 — 2026</div>
+                        <div>
+                            <p class="job-title">Care API Representative</p>
+                            <ul>
+                                <li><strong>Investigation technique avancée :</strong> Analyse de requêtes REST, résolution de bugs complexes liés aux flux de données (facturation, CRM, stocks, connecteurs comptables).</li>
+                                <li><strong>Interface Support / Engineering :</strong> Reproduction rigoureuse des bugs, tests de non-régression et rédaction de tickets techniques détaillés pour les équipes de dev.</li>
+                                <li><strong>Documentation technique Dev :</strong> Rédaction et structuration de l'espace Notion API destiné aux intégrateurs externes.</li>
+                                <li>Support des intégrations tierces : Make, n8n, Chift (connecteurs comptables).</li>
+                            </ul>
+                            <div class="results">
+                                <span class="r-label">Points clés</span>
+                                Rédaction de 30+ articles techniques (devenus la référence N2).<br/>
+                                Création d'un canal de communication direct Support ↔ Engineering.<br/>
+                                Conception d'un POC d'architecture (Fastify/Redis) pour la gestion de webhooks haute performance, validé par l'équipe technique.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">2022 — 2023</div>
+                        <div>
+                            <p class="job-title">Développeur Backend & Frontend</p>
+                            <ul>
+                                <li><strong>Backend (Node.js) :</strong> Développement et maintien de Workbooks d'import de données complexes via Flatfile.</li>
+                                <li><strong>Debug & Maintenance :</strong> Résolution de bugs critiques en production sur un backend PHP/XSL ancien.</li>
+                                <li><strong>Frontend (Vue.js) :</strong> Maintenance et évolutions sur les templates d'import.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">2018 — 2022</div>
+                        <div>
+                            <div class="company-super" style="margin-bottom: 2px;">
+                                <span class="super-name">SITEL</span>
+                            </div>
+                            <p class="job-title">Conseiller Client B2B</p>
+                            <ul>
+                                <li>Support technique et commercial (SFR Business, MAAF Assurances) : gestion d'incidents complexes et escalades.</li>
+                                <li>Formation et accompagnement technique des nouveaux conseillers.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">2005 — 2017</div>
+                        <div>
+                            <div class="company-super" style="margin-bottom: 2px;">
+                                <span class="super-name">CASINO DE CHÂTELAILLON</span>
+                            </div>
+                            <p class="job-title">Responsable Service</p>
+                            <ul>
+                                <li>Management d'équipe (5 à 9 personnes), organisation et suivi de performance.</li>
+                                <li>Gestion budgétaire et maintenance technique (électrotechnique, audiovisuel).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <br />
+                <div class="two-col">
+                    <section>
+                        <p class="sec-title">Contributions open source</p>
+                        <div class="changelog">
+                            <p class="cl-group">packages publiés <span class="cl-meta">· hex.pm</span></p>
+                            <div class="cl-line">
+                                <span class="cl-tag">[released]</span>
+                                <span class="cl-repo">cfonb</span>
+                                <span class="cl-desc">— parser Elixir des relevés bancaires CFONB</span>
+                            </div>
+                            <div class="cl-line">
+                                <span class="cl-tag">[released]</span>
+                                <span class="cl-repo">facturx</span>
+                                <span class="cl-desc">— génération de factures Factur-X (PDF/A-3 + XML)</span>
+                            </div>
+                            <div class="cl-line">
+                                <span class="cl-tag">[released]</span>
+                                <span class="cl-repo">search_ash</span>
+                                <span class="cl-desc">— recherche full-text PostgreSQL pour Ash Framework</span>
+                            </div>
+                            <div class="cl-line">
+                                <span class="cl-tag">[released]</span>
+                                <span class="cl-repo">green_cal</span>
+                                <span class="cl-desc">— calendrier de saisonnalité des cultures maraîchères</span>
+                            </div>
+
+                            <p class="cl-group second">contributions upstream</p>
+                            <div class="cl-line wrap">
+                                <span class="cl-tag">[merged]</span>
+                                <span class="cl-repo">elixir-lang/elixir</span>
+                                <span class="cl-meta"> · </span>
+                                <span class="cl-repo">elixir-ecto/postgrex</span>
+                                <span class="cl-meta"> · </span>
+                                <span class="cl-repo">ash-project/ash</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <p class="sec-title">Projets personnels</p>
+                        <ul class="proj-list">
+                            <li>
+                                <b>Plateforme SaaS multi-tenant (Projet en lancement)</b>
+                                — Elixir, Phoenix LiveView, <b>Ash Framework</b>, PostgreSQL (Fly.io). Conception intégrale de l'architecture DDD, de la gestion d'exploitation à la facturation. (Mise en production imminente).
+                            </li>
+                            <li>
+                                <b>Application iPad de prise de commande</b>
+                                — Swift / Firebase. Développée de A à Z, utilisée en production pendant 6 ans (marchés publics Egalim / producteurs locaux).
+                            </li>
+                            <li>
+                                <b>Parser HL7 → JSON</b> — Elixir, interopérabilité et intégration de données de santé.
+                            </li>
+                            <li><b>POC Webhooks haute performance</b> — Node.js (Fastify/Redis), conception assistée par IA générative.</li>
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
