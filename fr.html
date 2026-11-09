@@ -246,6 +246,16 @@
                 cursor: pointer;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             }
+                        .nav-btn {
+                text-decoration: none;
+                display: inline-block;
+                background: var(--panel);
+                color: var(--accent-deep);
+                border: 1px solid var(--line);
+            }
+            .nav-btn:hover { background: var(--accent-soft); color: var(--accent-deep); }
+            .nav-lang { right: 112px; }
+            .nav-home { right: 158px; }
             .print-btn:hover { background: var(--accent); }
 
             @media print {
@@ -260,13 +270,14 @@
     <body>
         <button class="print-btn" onclick="window.print()">Imprimer / PDF</button>
 
+        <a class="print-btn nav-btn nav-lang" href="en.html">EN</a>
+        <a class="print-btn nav-btn nav-home" href="index.html">←</a>
         <div class="page">
             <aside class="sidebar">
                 <img class="photo" src="pic.png" alt="Portrait de Sébastien Portrait" />
 
                 <div class="contact">
-                    <span class="k">Localisation</span>Trizay (17250), FR
-                    <br /><span class="k">Téléphone</span>06 31 10 14 98
+                    <span class="k">Localisation</span>Nouvelle-Aquitaine, France
                     <br /><span class="k">Email</span><a href="mailto:nseaprotector@gmail.com">nseaprotector@gmail.com</a>
                     <br /><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/sebastien-portrait-31a3b0352/" target="_blank">Sébastien Portrait</a>
                     <br /><span class="k">GitHub</span><a href="https://github.com/nseaSeb" target="_blank">nseaSeb</a>
