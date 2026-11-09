@@ -42,7 +42,7 @@
 
             .sidebar {
                 background: var(--panel);
-                padding: 9mm 7mm 10mm 10mm;
+                padding: 8mm 7mm 8mm 9mm;
                 border-right: 1px solid var(--line);
                 display: flex;
                 flex-direction: column;
@@ -65,7 +65,6 @@
                 font-size: 18px;
                 line-height: 1.15;
                 margin: 0 0 13px;
-                color: var(--ink);
                 letter-spacing: -0.02em;
             }
 
@@ -76,12 +75,7 @@
                 margin-bottom: 18px;
                 word-break: break-word;
             }
-            .contact a {
-                color: var(--accent-deep);
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.2s;
-            }
+            .contact a { color: var(--accent-deep); text-decoration: none; font-weight: 500; }
             .contact a:hover { color: var(--accent); text-decoration: underline; }
             .contact .k {
                 font-family: var(--mono);
@@ -103,37 +97,24 @@
                 border-bottom: 1px solid var(--line);
                 font-weight: 600;
             }
+            .side-block { margin-bottom: 14px; }
 
-            .side-block { margin-bottom: 17px; }
-
-            .skill-cat { margin-bottom: 10px; }
+            .skill-cat { margin-bottom: 8px; }
             .skill-cat-title {
                 font-size: 10px;
                 font-weight: 600;
-                color: var(--ink);
                 margin: 0 0 4px;
                 display: block;
             }
-            .skill-list {
+            .skill-lines {
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0;
-            }
-            .skill-list li {
-                font-family: var(--mono);
                 font-size: 9.5px;
+                line-height: 1.5;
                 color: var(--ink-soft);
-                margin-right: 2px;
             }
-            .skill-list li:not(:last-child)::after {
-                content: "·";
-                margin-left: 4px;
-                color: var(--line);
-                font-weight: bold;
-            }
+            .skill-lines li::before { content: "› "; color: var(--accent); font-weight: 600; }
 
             .lang-item {
                 font-size: 11px;
@@ -142,12 +123,7 @@
                 justify-content: space-between;
                 align-items: center;
             }
-            .lang-lvl {
-                font-family: var(--mono);
-                font-size: 9px;
-                color: var(--muted);
-                text-align: right;
-            }
+            .lang-lvl { font-family: var(--mono); font-size: 9px; color: var(--muted); }
 
             .edu-item {
                 font-size: 10.5px;
@@ -156,6 +132,7 @@
                 color: var(--ink-soft);
             }
             .edu-item .t { color: var(--ink); font-weight: 600; display: block; font-size: 11px; }
+            .edu-item .y { font-family: var(--mono); font-size: 9px; color: var(--muted); }
             .misc { font-size: 10px; color: var(--ink-soft); line-height: 1.7; }
 
             .main {
@@ -170,13 +147,11 @@
                 border-bottom: 2px solid var(--ink);
             }
             .big-title {
-                font-family: var(--sans);
-                font-size: 23px;
+                font-size: 26px;
                 font-weight: 700;
-                letter-spacing: -0.03em;
+                letter-spacing: -0.02em;
                 margin: 0 0 8px;
-                color: var(--ink);
-                line-height: 1;
+                line-height: 1.05;
             }
             .tech-stack {
                 font-family: var(--mono);
@@ -191,8 +166,8 @@
                 font-size: 10.5px;
                 line-height: 1.55;
                 color: var(--ink-soft);
-                padding-bottom: 8px;
-                margin-bottom: 8px;
+                padding-bottom: 10px;
+                margin: 0 0 11px;
                 border-bottom: 1px solid var(--line);
             }
             .profil strong { color: var(--ink); font-weight: 600; }
@@ -209,40 +184,15 @@
                 margin: 0 0 10px;
                 font-weight: 600;
             }
-            .sec-title::after {
-                content: "";
-                flex: 1;
-                height: 1px;
-                background: var(--line);
-            }
+            .sec-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
-            section { margin-bottom: 12px; }
-            section:last-child { margin-bottom: 0; }
-
-            .company-super {
-                margin-bottom: 4px;
-                display: flex;
-                align-items: baseline;
-                gap: 8px;
-            }
-            .super-name {
-                font-family: var(--mono);
-                font-size: 11px;
-                font-weight: 600;
-                color: var(--ink);
-                letter-spacing: 0.02em;
-            }
-            .super-range {
-                font-family: var(--mono);
-                font-size: 9.5px;
-                color: var(--muted);
-            }
+            section { margin-bottom: 14px; }
 
             .job {
                 display: grid;
                 grid-template-columns: 18mm 1fr;
                 gap: 3mm;
-                margin-bottom: 8px;
+                margin-bottom: 7px;
             }
             .job-date {
                 font-family: var(--mono);
@@ -251,13 +201,17 @@
                 padding-top: 2px;
                 line-height: 1.5;
             }
-            .job-title {
-                font-size: 11px;
-                font-weight: 700;
-                margin: 0 0 3px;
+            .company {
+                font-family: var(--mono);
+                font-size: 10.5px;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                display: block;
+                margin-bottom: 1px;
             }
+            .job-title { font-size: 11px; font-weight: 700; margin: 0 0 3px; }
             .job ul {
-                margin: 0 0 4px;
+                margin: 0;
                 padding-left: 13px;
                 font-size: 9.5px;
                 line-height: 1.5;
@@ -265,97 +219,18 @@
             }
             .job ul li { margin-bottom: 1px; }
 
-            .results {
-                background: var(--accent-soft);
-                border-left: 2px solid var(--accent);
-                padding: 5px 8px;
-                font-size: 9px;
-                line-height: 1.45;
-                color: var(--accent-deep);
-                margin-top: 5px;
-            }
-            .results .r-label {
-                font-family: var(--mono);
-                font-size: 8.5px;
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
-                display: block;
-                margin-bottom: 3px;
-                opacity: 0.7;
-                font-weight: 600;
-            }
+            .compact .job { margin-bottom: 6px; }
+            .compact .job-title { font-size: 10.5px; margin-bottom: 2px; }
 
-            .changelog {
+            .extra {
                 background: var(--accent-soft);
-                color: var(--accent-deep);
                 border-left: 2px solid var(--accent);
-                padding: 12px 14px;
-                font-family: var(--mono);
+                padding: 8px 11px;
                 font-size: 9.5px;
-                line-height: 1.7;
-            }
-            .cl-group {
-                color: var(--muted);
-                font-size: 8.5px;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                margin: 0 0 4px;
-                font-weight: 600;
-            }
-            .cl-group.second { margin-top: 10px; }
-            .cl-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 1px; }
-            .cl-line.wrap {
-                white-space: normal;
-                overflow: visible;
-                padding-left: 62px;
-                text-indent: -62px;
-            }
-            .cl-tag {
-                color: var(--accent);
-                font-weight: 600;
-                display: inline-block;
-                width: 62px;
-            }
-            .cl-repo { color: var(--ink); font-weight: 600; }
-            .cl-desc { color: var(--ink-soft); }
-            .cl-meta { color: var(--muted); }
-
-            .proj-list {
-                font-size: 10.5px;
-                line-height: 1.6;
+                line-height: 1.55;
                 color: var(--ink-soft);
-                padding-left: 14px;
-                margin: 0;
             }
-            .proj-list li { margin-bottom: 5px; }
-            .proj-list b { color: var(--ink); font-weight: 600; }
-
-            .two-col {
-                display: grid;
-                grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-                gap: 20px;
-                align-items: start;
-            }
-            .two-col section { margin-bottom: 0; min-width: 0; }
-            /* En demi-largeur le changelog ne peut plus rester sur une seule ligne */
-            .two-col .changelog {
-                padding: 11px 13px;
-                font-size: 9px;
-                line-height: 1.65;
-                overflow-wrap: break-word;
-            }
-            .two-col .cl-line,
-            .two-col .cl-line.wrap {
-                white-space: normal;
-                overflow: visible;
-                text-overflow: clip;
-                padding-left: 10px;
-                text-indent: -10px;
-                margin-bottom: 3px;
-            }
-            .two-col .cl-tag { width: auto; margin-right: 3px; }
-            .two-col .proj-list { font-size: 9.5px; line-height: 1.5; padding-left: 12px; }
-            .two-col .proj-list li { margin-bottom: 3px; }
+            .extra b { color: var(--accent-deep); font-weight: 600; }
 
             .print-btn {
                 position: fixed;
@@ -369,20 +244,8 @@
                 padding: 8px 14px;
                 border-radius: 4px;
                 cursor: pointer;
-                letter-spacing: 0.03em;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-                transition: background 0.2s;
             }
-                        .nav-btn {
-                text-decoration: none;
-                display: inline-block;
-                background: var(--panel);
-                color: var(--accent-deep);
-                border: 1px solid var(--line);
-            }
-            .nav-btn:hover { background: var(--accent-soft); color: var(--accent-deep); }
-            .nav-lang { right: 112px; }
-            .nav-home { right: 158px; }
             .print-btn:hover { background: var(--accent); }
 
             @media print {
@@ -397,15 +260,13 @@
     <body>
         <button class="print-btn" onclick="window.print()">Imprimer / PDF</button>
 
-        <a class="print-btn nav-btn nav-lang" href="en.html">EN</a>
-        <a class="print-btn nav-btn nav-home" href="index.html">←</a>
         <div class="page">
             <aside class="sidebar">
                 <img class="photo" src="pic.png" alt="Portrait de Sébastien Portrait" />
-                <p class="name">Sébastien Portrait</p>
 
                 <div class="contact">
-                    <span class="k">Localisation</span>Nouvelle-Aquitaine, France
+                    <span class="k">Localisation</span>Trizay (17250), FR
+                    <br /><span class="k">Téléphone</span>06 31 10 14 98
                     <br /><span class="k">Email</span><a href="mailto:nseaprotector@gmail.com">nseaprotector@gmail.com</a>
                     <br /><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/sebastien-portrait-31a3b0352/" target="_blank">Sébastien Portrait</a>
                     <br /><span class="k">GitHub</span><a href="https://github.com/nseaSeb" target="_blank">nseaSeb</a>
@@ -415,52 +276,46 @@
                     <p class="side-h">Compétences</p>
 
                     <div class="skill-cat">
-                        <span class="skill-cat-title">Backend</span>
-                        <ul class="skill-list">
-                            <li>Elixir</li><li>Phoenix</li><li>Ash Framework</li>
-                            <li>Node.js</li><li>NestJS</li><li>Express</li>
-                            <li>PHP</li>
+                        <span class="skill-cat-title">Développement & API</span>
+                        <ul class="skill-lines">
+                            <li>Elixir / Phoenix, Node.js, PHP</li>
+                            <li>JavaScript, Vue.js, Angular</li>
+                            <li>PostgreSQL, SQL</li>
+                            <li>API REST, webhooks, OAuth</li>
                         </ul>
                     </div>
 
                     <div class="skill-cat">
-                        <span class="skill-cat-title">API & Architecture</span>
-                        <ul class="skill-list">
-                            <li>REST</li><li>Webhooks</li><li>OAuth</li>
-                            <li>SaaS</li><li>Multi-tenancy</li>
+                        <span class="skill-cat-title">Automatisation & intégration</span>
+                        <ul class="skill-lines">
+                            <li>n8n, Make (Integromat), ActivePieces</li>
+                            <li>Connecteurs métier et comptables</li>
+                            <li>Synchronisation de flux de données</li>
                         </ul>
                     </div>
 
                     <div class="skill-cat">
-                        <span class="skill-cat-title">Data & Bases</span>
-                        <ul class="skill-list">
-                            <li>PostgreSQL</li><li>SQL</li><li>Full-text search</li>
+                        <span class="skill-cat-title">Système & outils</span>
+                        <ul class="skill-lines">
+                            <li>Linux, Docker, Git, CI/CD</li>
                         </ul>
                     </div>
 
                     <div class="skill-cat">
-                        <!-- Reformulation : on vante le bare-metal/conteneurs plutôt qu'un cloud spécifique -->
-                        <span class="skill-cat-title">Infrastructure & CI/CD</span>
-                        <ul class="skill-list">
-                            <li>Linux</li><li>Docker</li><li>Git</li>
-                            <li>Fly.io</li><li>CI/CD</li>
+                        <span class="skill-cat-title">Électricité & maintenance</span>
+                        <ul class="skill-lines">
+                            <li>Lecture de schémas, câblage</li>
+                            <li>Mesures, recherche de pannes</li>
+                            <li>Dépannage électromécanique</li>
+                            <li>Sonorisation, éclairage, audiovisuel</li>
                         </ul>
                     </div>
 
                     <div class="skill-cat">
-                        <!-- Tests mis en avant -->
-                        <span class="skill-cat-title">Tests & Outils</span>
-                        <ul class="skill-list">
-                            <li>ExUnit</li>
-                            <li>Claude Code</li><li>Postman</li>
-                        </ul>
-                    </div>
-
-                    <div class="skill-cat">
-                        <span class="skill-cat-title">Frontend (Intégration)</span>
-                        <ul class="skill-list">
-                            <li>JavaScript</li><li>Vue.js</li><li>Angular</li>
-                            <li>HTML / CSS</li>
+                        <span class="skill-cat-title">Encadrement & clients</span>
+                        <ul class="skill-lines">
+                            <li>Support et intervention sur site</li>
+                            <li>Encadrement d'équipe, budget</li>
                         </ul>
                     </div>
                 </div>
@@ -473,18 +328,19 @@
                     </div>
                     <div class="lang-item">
                         <span>🇬🇧 Anglais</span>
-                        <span class="lang-lvl">B2 · TOEIC 795/990</span>
+                        <span class="lang-lvl">B1–B2</span>
                     </div>
                 </div>
 
                 <div class="side-block">
                     <p class="side-h">Formation</p>
                     <div class="edu-item">
-                        <span class="t">CAP Électrotechnique</span>
+                        <span class="t">Dyma Academy — 275h+</span>
+                        JavaScript, Node.js, Vue.js, Angular, Linux, Bash, Git, Docker, SQL
                     </div>
                     <div class="edu-item">
-                        <span class="t">Dyma Academy — 275h+</span>
-                        JavaScript, Bash, Linux, Node.js, Vue.js, Angular, Rust, Git, Docker, SQL
+                        <span class="t">CAP Électrotechnique</span>
+                        <span class="y">1990</span>
                     </div>
                 </div>
 
@@ -499,49 +355,30 @@
 
             <main class="main">
                 <header class="masthead">
-                    <h1 class="big-title">DÉVELOPPEUR BACKEND & API</h1>
-                    <p class="tech-stack">Elixir · Phoenix · Node.js · NestJS · PostgreSQL · SaaS · Intégration API Rest</p>
+                    <h1 class="big-title">SÉBASTIEN PORTRAIT</h1>
+                    <p class="tech-stack">Développement &amp; API · Automatisation · Support technique · Électrotechnique</p>
                 </header>
 
                 <p class="profil">
-                    <strong>4 années d'expérience professionnelle</strong> sur des logiciels de gestion SaaS, avec une forte appétence pour l'investigation technique, le debug et la consommation d'API. Autodidacte depuis les années 90 (de l'ASM 68k aux architectures modernes), j'ai une approche pragmatique du développement. Je maîtrise la stack <strong>Elixir/Phoenix & Ash</strong>. Expérience frontend avec <strong>JavaScript</strong>, Vue.js et Angular, et backend avec Node.js, Express et NestJS. J'intègre l'IA générative (Claude Code) dans mon workflow. Contributeur Open Source.
+                    Développeur et technicien. Aujourd'hui : <strong>développement backend</strong>, <strong>intégration d'API REST</strong>
+                    et <strong>automatisation de flux métier</strong> (n8n, Make, webhooks). Avant cela, une formation et dix ans de terrain en
+                    <strong>électrotechnique</strong> (CAP, électricien, SAV photocopieurs), puis douze ans à la tête du service d'une discothèque.
                 </p>
-                <br />
+
                 <section>
                     <p class="sec-title">Expérience professionnelle</p>
-
-                    <div class="company-super">
-                        <span class="super-name">SELLSY</span>
-                        <span class="super-range">2022 — 2026</span>
-                    </div>
+ 
 
                     <div class="job">
-                        <div class="job-date">2023 — 2026</div>
+                        <div class="job-date">2022 — 2026</div>
                         <div>
-                            <p class="job-title">Care API Representative</p>
+                            <span class="company">SELLSY</span>
+                            <p class="job-title">Care API Representative (2023–2026), développeur (2022–2023)</p>
                             <ul>
-                                <li><strong>Investigation technique avancée :</strong> Analyse de requêtes REST, résolution de bugs complexes liés aux flux de données (facturation, CRM, stocks, connecteurs comptables).</li>
-                                <li><strong>Interface Support / Engineering :</strong> Reproduction rigoureuse des bugs, tests de non-régression et rédaction de tickets techniques détaillés pour les équipes de dev.</li>
-                                <li><strong>Documentation technique Dev :</strong> Rédaction et structuration de l'espace Notion API destiné aux intégrateurs externes.</li>
-                                <li>Support des intégrations tierces : Make, n8n, Chift (connecteurs comptables).</li>
-                            </ul>
-                            <div class="results">
-                                <span class="r-label">Points clés</span>
-                                Rédaction de 30+ articles techniques (devenus la référence N2).<br/>
-                                Création d'un canal de communication direct Support ↔ Engineering.<br/>
-                                Conception d'un POC d'architecture (Fastify/Redis) pour la gestion de webhooks haute performance, validé par l'équipe technique.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="job">
-                        <div class="job-date">2022 — 2023</div>
-                        <div>
-                            <p class="job-title">Développeur Backend & Frontend</p>
-                            <ul>
-                                <li><strong>Backend (Node.js) :</strong> Développement et maintien de Workbooks d'import de données complexes via Flatfile.</li>
-                                <li><strong>Debug & Maintenance :</strong> Résolution de bugs critiques en production sur un backend PHP/XSL ancien.</li>
-                                <li><strong>Frontend (Vue.js) :</strong> Maintenance et évolutions sur les templates d'import.</li>
+                                <li>Investigation sur les <b>flux d'API REST</b> d'un logiciel de gestion SaaS : analyse de requêtes, webhooks, bugs de facturation, CRM, stocks et connecteurs comptables.</li>
+                                <li>Support des <b>intégrations et de l'automatisation</b> : Make (Integromat), n8n, Chift ; accompagnement des intégrateurs externes et documentation API.</li>
+                                <li>Reproduction de bugs, tests de non-régression et tickets techniques ; 30+ articles devenus la référence du support N2.</li>
+                                <li>Développement backend (Node.js) et frontend (Vue.js) des outils d'import de données ; correction de bugs en production.</li>
                             </ul>
                         </div>
                     </div>
@@ -549,13 +386,10 @@
                     <div class="job">
                         <div class="job-date">2018 — 2022</div>
                         <div>
-                            <div class="company-super" style="margin-bottom: 2px;">
-                                <span class="super-name">SITEL</span>
-                            </div>
-                            <p class="job-title">Conseiller Client B2B</p>
+                            <span class="company">SITEL</span>
+                            <p class="job-title">Conseiller client B2B</p>
                             <ul>
-                                <li>Support technique et commercial (SFR Business, MAAF Assurances) : gestion d'incidents complexes et escalades.</li>
-                                <li>Formation et accompagnement technique des nouveaux conseillers.</li>
+                                <li>Support technique et commercial (SFR Business, MAAF) : incidents, escalades, formation des nouveaux conseillers.</li>
                             </ul>
                         </div>
                     </div>
@@ -563,74 +397,79 @@
                     <div class="job">
                         <div class="job-date">2005 — 2017</div>
                         <div>
-                            <div class="company-super" style="margin-bottom: 2px;">
-                                <span class="super-name">CASINO DE CHÂTELAILLON</span>
-                            </div>
-                            <p class="job-title">Responsable Service</p>
+                            <span class="company">CASINO DE CHÂTELAILLON</span>
+                            <p class="job-title">Responsable service (discothèque)</p>
                             <ul>
-                                <li>Management d'équipe (5 à 9 personnes), organisation et suivi de performance.</li>
-                                <li>Gestion budgétaire et maintenance technique (électrotechnique, audiovisuel).</li>
+                                <li>Encadrement d'une équipe de 5 à 9 personnes, organisation, suivi de performance et gestion budgétaire.</li>
+                                <li>Exploitation et maintenance du matériel de sonorisation, d'éclairage et audiovisuel.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">2002 — 2005<br />et 1998</div>
+                        <div>
+                            <span class="company">DISCOTHÈQUE LE MIAMI — SAINT-FÉLIX (17)</span>
+                            <p class="job-title">Disc-jockey</p>
+                            <ul>
+                                <li>Animation musicale, exploitation et entretien du matériel de sonorisation et d'éclairage.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">1998 — 2002</div>
+                        <div>
+                            <span class="company">QUADRATURE</span>
+                            <p class="job-title">Technicien photocopieur</p>
+                            <ul>
+                                <li>Dépannage et maintenance préventive chez les clients : diagnostic de pannes électriques et mécaniques, remplacement de pièces, mise en service.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">1994 — 1998</div>
+                        <div>
+                            <span class="company">OURAGAN SONORISATION</span>
+                            <p class="job-title">Prestataire indépendant</p>
+                            <ul>
+                                <li>Prestations de sonorisation et d'éclairage événementiel : installation, câblage, exploitation et maintenance du matériel ; gestion de l'activité.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">1991 — 1994</div>
+                        <div>
+                            <span class="company">RICOH FRANCE</span>
+                            <p class="job-title">Technicien photocopieur</p>
+                            <ul>
+                                <li>Service après-vente sur copieurs Ricoh : interventions sur site, réglages, maintenance préventive selon les préconisations constructeur.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-date">1986 — 1990</div>
+                        <div>
+                            <span class="company">BERNARD FERRANT</span>
+                            <p class="job-title">Électricien</p>
+                            <ul>
+                                <li>Installation électrique : câblage, raccordement, pose d'appareillage ; dépannage et mise en conformité.</li>
                             </ul>
                         </div>
                     </div>
                 </section>
-                <br />
-                <div class="two-col">
-                    <section>
-                        <p class="sec-title">Contributions open source</p>
-                        <div class="changelog">
-                            <p class="cl-group">packages publiés <span class="cl-meta">· hex.pm</span></p>
-                            <div class="cl-line">
-                                <span class="cl-tag">[released]</span>
-                                <span class="cl-repo">cfonb</span>
-                                <span class="cl-desc">— parser Elixir des relevés bancaires CFONB</span>
-                            </div>
-                            <div class="cl-line">
-                                <span class="cl-tag">[released]</span>
-                                <span class="cl-repo">facturx</span>
-                                <span class="cl-desc">— génération de factures Factur-X (PDF/A-3 + XML)</span>
-                            </div>
-                            <div class="cl-line">
-                                <span class="cl-tag">[released]</span>
-                                <span class="cl-repo">search_ash</span>
-                                <span class="cl-desc">— recherche full-text PostgreSQL pour Ash Framework</span>
-                            </div>
-                            <div class="cl-line">
-                                <span class="cl-tag">[released]</span>
-                                <span class="cl-repo">green_cal</span>
-                                <span class="cl-desc">— calendrier de saisonnalité des cultures maraîchères</span>
-                            </div>
 
-                            <p class="cl-group second">contributions upstream</p>
-                            <div class="cl-line wrap">
-                                <span class="cl-tag">[merged]</span>
-                                <span class="cl-repo">elixir-lang/elixir</span>
-                                <span class="cl-meta"> · </span>
-                                <span class="cl-repo">elixir-ecto/postgrex</span>
-                                <span class="cl-meta"> · </span>
-                                <span class="cl-repo">ash-project/ash</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section>
-                        <p class="sec-title">Projets personnels</p>
-                        <ul class="proj-list">
-                            <li>
-                                <b>Plateforme SaaS multi-tenant (Projet en lancement)</b>
-                                — Elixir, Phoenix LiveView, <b>Ash Framework</b>, PostgreSQL (Fly.io). Conception intégrale de l'architecture DDD, de la gestion d'exploitation à la facturation. (Mise en production imminente).
-                            </li>
-                            <li>
-                                <b>Application iPad de prise de commande</b>
-                                — Swift / Firebase. Développée de A à Z, utilisée en production pendant 6 ans (marchés publics Egalim / producteurs locaux).
-                            </li>
-                            <li>
-                                <b>Parser HL7 → JSON</b> — Elixir, interopérabilité et intégration de données de santé.
-                            </li>
-                            <li><b>POC Webhooks haute performance</b> — Node.js (Fastify/Redis), conception assistée par IA générative.</li>
-                        </ul>
-                    </section>
-                </div>
+                <section style="margin-bottom: 0;">
+                    <p class="sec-title">Projets &amp; réalisations</p>
+                    <div class="extra">
+                        <b>Application iPad de prise de commande</b> (Swift / Firebase), développée seul, utilisée en production pendant 6 ans.<br />
+                        <b>Open source</b> : packages Elixir sur hex.pm — cfonb (relevés bancaires), facturx (Factur-X), search_ash (recherche full-text).<br />
+                        <b>POC webhooks haute performance</b> (Node.js, Fastify / Redis) et <b>parser HL7 → JSON</b> (Elixir).
+                    </div>
+                </section>
             </main>
         </div>
     </body>
